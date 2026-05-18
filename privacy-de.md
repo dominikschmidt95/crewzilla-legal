@@ -116,6 +116,14 @@ Du kannst die Berechtigung jederzeit über die iOS-Einstellungen widerrufen. In 
 **Zweck:** Transparenz innerhalb einer Gruppe (wer hat was wann getan).
 **Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Nachvollziehbarkeit für Gruppen-Mitglieder).
 
+### 3.12 In-App-Käufe / Crewzilla Plus
+
+**Daten:** App-User-ID (Supabase Auth UUID), Apple-Receipt-Daten, Abonnement-Status (aktiv, Trial, abgelaufen, gekündigt), Kauf- und Verlängerungsdaten, App-Store-Land, iOS-Version.
+**Zweck:** Bereitstellung des Premium-Funktionsumfangs (Crewzilla Plus), technische Validierung des Kaufs (Receipt-Validation), Verwaltung von Trial- und Verlängerungs-Status, Reaktion auf Renewal/Cancellation/Refund-Ereignisse.
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
+
+Die Zahlung selbst erfolgt ausschließlich über deine **Apple-ID**; Crewzilla erhält **keine Zahlungs- oder Kreditkartendaten** von dir.
+
 ---
 
 ## 4. Empfänger und Auftragsverarbeiter
@@ -134,9 +142,16 @@ Wir setzen folgende externe Dienstleister ein:
   - **Sign in with Apple** (OIDC-basierte Anmeldung),
   - **Apple Push Notification Service (APNs)** (Versand von Push-Nachrichten an dein Gerät),
   - **MapKit** (Darstellung von Karten in der App),
-  - **EventKit** (lokaler Zugriff auf den Apple-Kalender, ausschließlich auf deinem Gerät).
-- **Verarbeitete Daten:** Apple-ID-Token, APNs-Device-Token, Karten-Anfragen.
+  - **EventKit** (lokaler Zugriff auf den Apple-Kalender, ausschließlich auf deinem Gerät),
+  - **In-App-Käufe / App Store** (Abwicklung und Abbuchung von Crewzilla-Plus-Abonnements über die Apple-ID).
+- **Verarbeitete Daten:** Apple-ID-Token, APNs-Device-Token, Karten-Anfragen, Receipt-Daten zu Crewzilla-Plus-Käufen.
 - **Rechtsgrundlage Übermittlung:** Apple Developer Program License Agreement, Apple Data Processing Addendum, EU-Standardvertragsklauseln; Apple ist nach EU-US Data Privacy Framework zertifiziert.
+
+### RevenueCat, Inc.
+- **Sitz:** USA (San Francisco, CA).
+- **Funktion:** Verwaltung der In-App-Käufe von Crewzilla Plus: serverseitige Validierung der Apple-Receipts, Synchronisation des Abonnement- und Entitlement-Status, Empfang von Server-Notifications zu Renewals, Cancellations und Refunds.
+- **Verarbeitete Daten:** App-User-ID (Supabase Auth UUID), Apple-Receipt-Daten, Subscription- und Entitlement-Status, App-Store-Land, iOS-Version, Zeitstempel der Kauf-Ereignisse.
+- **Rechtsgrundlage Übermittlung:** Auftragsverarbeitungsvertrag nach Art. 28 DSGVO (RevenueCat Data Processing Addendum), EU-Standardvertragsklauseln gemäß Durchführungsbeschluss (EU) 2021/914. RevenueCat ist nach EU-US Data Privacy Framework zertifiziert.
 
 ### Wir setzen ausdrücklich NICHT ein
 

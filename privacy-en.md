@@ -116,6 +116,14 @@ You may revoke the permission at any time via iOS Settings. Within the app each 
 **Purpose:** transparency within a group (who did what and when).
 **Legal basis:** Art. 6 (1)(f) GDPR (legitimate interest in traceability for group members).
 
+### 3.12 In-app purchases / Crewzilla Plus
+
+**Data:** app user ID (Supabase Auth UUID), Apple receipt data, subscription status (active, trial, expired, cancelled), purchase and renewal timestamps, App Store country, iOS version.
+**Purpose:** providing the premium feature set (Crewzilla Plus), technical validation of the purchase (receipt validation), management of trial and renewal status, handling of renewal/cancellation/refund events.
+**Legal basis:** Art. 6 (1)(b) GDPR (performance of contract).
+
+Payment itself is processed exclusively via your **Apple ID**; Crewzilla does **not** receive any payment or credit-card data from you.
+
 ---
 
 ## 4. Recipients and Processors
@@ -134,9 +142,16 @@ We use the following external service providers:
   - **Sign in with Apple** (OIDC-based authentication),
   - **Apple Push Notification Service (APNs)** (delivering push messages to your device),
   - **MapKit** (rendering maps in the app),
-  - **EventKit** (local access to your Apple Calendar, exclusively on your device).
-- **Data processed:** Apple ID token, APNs device token, map requests.
+  - **EventKit** (local access to your Apple Calendar, exclusively on your device),
+  - **In-app purchases / App Store** (processing and billing of Crewzilla Plus subscriptions via the Apple ID).
+- **Data processed:** Apple ID token, APNs device token, map requests, receipt data for Crewzilla Plus purchases.
 - **Legal basis for transfer:** Apple Developer Program License Agreement, Apple Data Processing Addendum, EU Standard Contractual Clauses; Apple is certified under the EU-US Data Privacy Framework.
+
+### RevenueCat, Inc.
+- **Seat:** USA (San Francisco, CA).
+- **Function:** management of Crewzilla Plus in-app purchases: server-side validation of Apple receipts, synchronisation of subscription and entitlement status, processing of server notifications for renewals, cancellations and refunds.
+- **Data processed:** app user ID (Supabase Auth UUID), Apple receipt data, subscription and entitlement status, App Store country, iOS version, timestamps of purchase events.
+- **Legal basis for transfer:** data processing agreement under Art. 28 GDPR (RevenueCat Data Processing Addendum), EU Standard Contractual Clauses pursuant to Implementing Decision (EU) 2021/914. RevenueCat is certified under the EU-US Data Privacy Framework.
 
 ### We expressly do NOT use
 
