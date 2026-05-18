@@ -1,12 +1,17 @@
 # Legal Documents — Crewzilla
 
-Diese Dateien sind die **Single Source of Truth** für die Datenschutzerklärung.
+Diese Dateien sind die **Single Source of Truth** für Datenschutzerklärung und Nutzungsbedingungen.
+
+## Dokumente
+- `privacy-de.md` / `privacy-en.md` — Datenschutzerklärung (Privacy Policy)
+- `terms-de.md` / `terms-en.md` — Nutzungsbedingungen (Terms of Use)
+- `index.md` — Übersicht / Landing-Page
 
 ## Hosting
-- GitHub Pages serviert dieses Verzeichnis öffentlich.
-- Repo-Settings → Pages → Source: `main` branch, folder `/legal`.
-- Erreichbar unter z.B. `https://<owner>.github.io/<repo>/privacy-de/`
-  bzw. via CNAME unter `https://crewzilla.app/legal/privacy-de/`.
+- Dieses Repo ist privat; GitHub Pages hostet die Legal-Seiten daher über ein Public-Mirror-Repo: [`dominikschmidt95/crewzilla-legal`](https://github.com/dominikschmidt95/crewzilla-legal).
+- Bei jedem Push auf `main`, der `legal/**` ändert, spiegelt `.github/workflows/sync-legal.yml` den Folder automatisch ins Public-Repo (Inhalt landet dort im Root).
+- Pages-Setup im Public-Repo: Source = `main` branch, folder `/`.
+- Erreichbar unter `https://dominikschmidt95.github.io/crewzilla-legal/<slug>/` (z. B. `.../privacy-de/`).
 
 ## App-Bundle-Sync
 Bei jeder Änderung müssen die Markdown-Dateien in das App-Bundle kopiert werden:
@@ -14,19 +19,21 @@ Bei jeder Änderung müssen die Markdown-Dateien in das App-Bundle kopiert werde
 ```bash
 cp legal/privacy-de.md projektfriends/Resources/Legal/PrivacyPolicy.de.md
 cp legal/privacy-en.md projektfriends/Resources/Legal/PrivacyPolicy.en.md
+cp legal/terms-de.md   projektfriends/Resources/Legal/Terms.de.md
+cp legal/terms-en.md   projektfriends/Resources/Legal/Terms.en.md
 ```
 
 Diese Kopien werden im App-Build mitausgeliefert (über `fileSystemSynchronizedGroups`).
 
-## Platzhalter vor Veröffentlichung füllen
-- `{VERANTWORTLICHER_NAME}` — Name des Inhabers (Gewerbe)
-- `{ANSCHRIFT}` — Ladungsfähige Anschrift
-- `{KONTAKT_EMAIL}` — Datenschutz-Kontakt
-- `{USTID}` — optional, falls vorhanden
+## USt-ID
+- Falls keine USt-ID vorhanden, in `privacy-de.md`/`privacy-en.md` Zeile mit `{USTID}` löschen.
 
 ## Live URLs
 
-- Deutsch: `<FINALE_URL_DE>` — nach Aktivierung von GitHub Pages eintragen
-- English: `<FINALE_URL_EN>` — nach Aktivierung von GitHub Pages eintragen
+- Privacy DE: <https://dominikschmidt95.github.io/crewzilla-legal/privacy-de/>
+- Privacy EN: <https://dominikschmidt95.github.io/crewzilla-legal/privacy-en/>
+- Terms DE:   <https://dominikschmidt95.github.io/crewzilla-legal/terms-de/>
+- Terms EN:   <https://dominikschmidt95.github.io/crewzilla-legal/terms-en/>
 
-Diese URLs werden in App Store Connect → App Privacy → Privacy Policy URL eingetragen.
+- Privacy-URL → App Store Connect → App Privacy → Privacy Policy URL
+- Terms-URL → App Store Connect → General → App Information → License Agreement (optional, sonst gilt Apple Standard-EULA) sowie Marketing-Materialien
