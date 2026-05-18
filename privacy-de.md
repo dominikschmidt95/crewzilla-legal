@@ -3,6 +3,8 @@ title: Datenschutzerklärung
 lang: de
 ---
 
+> 🇩🇪 **Deutsch** · 🇬🇧 [English version](../privacy-en/)
+
 # Datenschutzerklärung
 
 **Stand:** 18. Mai 2026

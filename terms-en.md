@@ -3,6 +3,8 @@ title: Terms of Use
 lang: en
 ---
 
+> 🇬🇧 **English** · 🇩🇪 [Deutsche Version](../terms-de/)
+
 # Terms of Use
 
 **Last updated:** May 18, 2026

@@ -3,6 +3,8 @@ title: Privacy Policy
 lang: en
 ---
 
+> 🇬🇧 **English** · 🇩🇪 [Deutsche Version](../privacy-de/)
+
 # Privacy Policy
 
 **Last updated:** May 18, 2026

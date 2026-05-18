@@ -3,6 +3,8 @@ title: Nutzungsbedingungen
 lang: de
 ---
 
+> 🇩🇪 **Deutsch** · 🇬🇧 [English version](../terms-en/)
+
 # Nutzungsbedingungen
 
 **Stand:** 18. Mai 2026
